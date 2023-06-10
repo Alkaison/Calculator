@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    background-color: #2AAFA2;
+}
+
+.container {
+    width: 300px;
+    height: 600px;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 0 0 1px #000807;
+    background-color: #000807;
+}
+
+/* result and operation text formatting */
+.result-container {
+    height: 225px;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.operation {
+    position: absolute;
+    right: 24px;
+    bottom: 80px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #28ADA0;
+}
+.result {
+    position: absolute;
+    right: 12px;
+    bottom: 24px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.userInput {
+    position: absolute;
+    right: 12px;
+    bottom: 24px;
+    font-size: 24px;
+}
+
+/* buttons */
+.btn-container {
+    width: 100%;
+    height: 375px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border-radius: 10px;
+}
+.box {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    color: white;
+    border: .5px solid black;
+    background-color: #09161A;
+    padding-top: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.box:hover {
+    background-color: rgba(9, 22, 26, .5);
+}
+
+/* selecting all 4th column members */
+.box:nth-child(4n) {
+    background-color: #28ADA0;
+}
+/* hover effect for all 4th column members and equals sign */
+.box:nth-child(4n):hover, .box:last-child:hover {
+    background-color: rgba(40, 173, 160, .8);
+}
+
+/* left bottom box corner fix */
+.box:nth-last-child(3) {
+    border-radius: 0 0 0 10px;
+}
+
+/* formatting equals sign */
+.box:last-child {
+    grid-row: 5;
+    grid-column: 3 / span 2;
+    width: 150px;
+    border-radius: 0 0 10px 0;
+    background-color: #29AEA1;
+}
