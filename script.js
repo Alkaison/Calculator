@@ -5,6 +5,7 @@ const btnContainer = document.querySelector(".btn-container");
 
 let result = '';
 let resultShown = false;
+let lastOperatorIndex = 0;
 
 // check which button is clicked by user 
 const validateInput = event =>
@@ -95,11 +96,11 @@ const updateDisplay = keyValue => {
     const operatorResult = formatOperator(keyValue);
 
     // Append the result if it's not undefined 
-    if (operatorResult !== undefined && operatorResult !== null)
+    if (operatorResult !== undefined && operatorResult !== null && preventDoubleDecimalPoints(keyValue))
         userInputText.textContent += operatorResult; 
 }
 
-// if same operator is clicked twice, prevent it on screen 
+// if operator is switched then change it 
 const formatOperator = userChar => {
     const lastChar = userInputText.textContent.charAt(userInputText.textContent.length - 1);
     const operators = ['+', '-', '*', '/', '%', '.'];
@@ -113,6 +114,35 @@ const formatOperator = userChar => {
     }
 
     return userChar;
+}
+
+// if double decimal points are entered before a operator prevent it 
+const preventDoubleDecimalPoints = (keyValue) => {
+
+    const operators = ['+', '-', '*', '/', '%', '.'];
+    const userInput = userInputText.textContent + keyValue;
+    const newInput = userInput.slice(lastOperatorIndex);
+    
+    // Find double decimal points and prevent it 
+    for (let i = 0; i < newInput.length; i++)
+    {
+        if(newInput.charAt(0) === '.' && newInput.lastIndexOf('.') !== 0)
+        {
+            return false;
+        }
+    }
+    
+    // Find the last operator index 
+    for (let i = userInput.length - 1; i >= 0; i--) 
+    {
+        if (operators.includes(userInput[i]))
+        {
+            lastOperatorIndex = i;
+            break;
+        }
+    }
+
+    return true;
 }
 
 // event listener for button clicks 
