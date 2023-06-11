@@ -57,6 +57,9 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto;
     border-radius: 10px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .box {
     display: inline-block;
