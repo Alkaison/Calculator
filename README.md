@@ -1,6 +1,6 @@
 # Calculator
 
-A versatile tool for performing basic to complex mathematical calculations, including addition, subtraction, multiplication, division, and more, facilitating quick and accurate computations. The calculator is designed to perform basic arithmetic calculations and includes input validation, error handling, and has been thoroughly tested for accuracy and reliability.
+A versatile tool for performing basic to complex mathematical calculations, including addition, subtraction, multiplication, division, and more, facilitating quick and accurate computations. The calculator is designed to perform basic arithmetic calculations and includes input validation, error handling, and has been thoroughly tested for accuracy and reliability. Checkout here: https://alkaison.github.io/Calculator/
 
 ## Features
 
