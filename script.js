@@ -103,7 +103,7 @@ const updateDisplay = keyValue => {
 // if operator is switched then change it 
 const formatOperator = userChar => {
     const lastChar = userInputText.textContent.charAt(userInputText.textContent.length - 1);
-    const operators = ['+', '-', '*', '/', '%', '.'];
+    const operators = ['+', '-', '*', '/', '%'];
 
     if (
         lastChar !== '' &&
