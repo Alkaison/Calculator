@@ -95,7 +95,7 @@ const updateDisplay = keyValue => {
     const operatorResult = formatOperator(keyValue);
 
     // Append the result if it's not undefined 
-    if (operatorResult !== undefined)
+    if (operatorResult !== undefined && operatorResult !== null)
         userInputText.textContent += operatorResult; 
 }
 
