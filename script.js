@@ -142,6 +142,23 @@ const preventDoubleDecimalPoints = (keyValue) => {
         }
     }
 
+    // replace zero at first position with the next number 
+    if(newInput.charAt(1) === '0' && operators.includes(newInput[0]))
+    {
+        if(newInput.charAt(2) !== '' && newInput.charAt(2) !== '.')
+        {
+            const updatedText = userInput.substring(0, lastOperatorIndex + 1) + keyValue;
+            userInputText.textContent = updatedText;
+            return false;
+        }
+    }
+    else if(userInput.charAt(0) === '0')
+    {
+        userInputText.textContent = '';
+        userInputText.textContent = keyValue;
+        return false;
+    }
+
     return true;
 }
 
