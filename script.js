@@ -56,8 +56,11 @@ const calculateResults = () => {
     {
         try 
         {
-            result = eval(userInputText.textContent);
+            // evaluate expression results using mathJS library 
+            result = math.evaluate(userInputText.textContent);
             resultShown = true;
+            
+            // show the final results
             operationText.textContent = userInputText.textContent;
             userInputText.textContent = '';
             result = formatResult(result);
